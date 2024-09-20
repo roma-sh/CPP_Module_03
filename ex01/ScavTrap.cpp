@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:47:03 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 13:11:57 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/20 13:30:56 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "Booom, ScavTrap destructror is home baby!!!" << std::endl;
 }
-void	ScavTrap::guardGate()
-{
-}
+
 ScavTrap::ScavTrap(const ScavTrap& original) : ClapTrap(original)
 {
 	std::cout <<"Copy constructor from ScavTrap is here"<<std::endl;
@@ -41,4 +39,9 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& original)
 		ClapTrap::operator=(original);
 	}
 	return (*this);
+}
+
+void	ScavTrap::guardGate()
+{
+	std::cout << "\033[35m"<< this->getName()<< "\033[0m" << " ScavTrap is now in [Gate keeper] mode" << std::endl;
 }
