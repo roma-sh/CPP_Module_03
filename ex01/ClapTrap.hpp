@@ -6,12 +6,11 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:36 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/19 21:37:27 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/20 12:59:03 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 
 
 class ClapTrap
@@ -24,10 +23,12 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, unsigned int hit_points, unsigned int energy_points, unsigned int attack_damage);
 		~ClapTrap();
 		ClapTrap(const ClapTrap& original);
 		ClapTrap& operator=(const ClapTrap& original);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		void showPoints(void);
 };

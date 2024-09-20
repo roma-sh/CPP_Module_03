@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:27 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/19 20:25:41 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/20 13:01:12 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout <<"Default constructor is here"<<std::endl;
+	std::cout <<"default constructor is here"<<std::endl;
 	_name = "UNKNOWN";
 	_hit_points = 10;
 	_energy_points = 10;
@@ -28,6 +28,16 @@ ClapTrap::ClapTrap(std::string name)
 	_energy_points = 10;
 	_attack_damage = 0;
 }
+ClapTrap::ClapTrap(std::string name, unsigned int hit_points, unsigned int energy_points, unsigned int attack_damage)
+{
+	std::cout<< "\033[35m"<<name <<"\033[0m"<<": Yes sir!"<<std::endl;
+	_name = name;
+	_hit_points = hit_points;
+	_energy_points = energy_points;
+	_attack_damage = attack_damage;
+}
+
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Bang bang, Destructror is home baby!!!" << std::endl;
@@ -96,4 +106,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "\033[35m"<< _name<<"\033[0m" << "does't have enough energy points to be repaired!!" <<std::endl;
 	else if (_hit_points <= 0)
 		std::cout <<"\033[35m"<< _name << "\033[0m" << "does't have enough hit points to be repaired!!" <<std::endl;
+}
+void ClapTrap::showPoints(void)
+{
+
+	std::cout << "Hit points: " << _hit_points<< std::endl;;
+	std::cout << "Energy Points: " << _energy_points << std::endl;;
+	std::cout << "Attack damage: " << _attack_damage << std::endl;;
 }
