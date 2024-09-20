@@ -6,9 +6,12 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:36 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/19 21:37:27 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/20 18:20:01 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
 #include <iostream>
 #include <string>
@@ -31,3 +34,5 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
+
+#endif

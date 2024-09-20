@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:27 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/19 20:25:41 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/20 18:08:11 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& original)
 	if (this != &original)
 	{
 		std::cout<< original._name <<" was assigned where ever you want"<<std::endl;
-		_name = original._name;
-		_hit_points = original._hit_points;
-		_energy_points = original._energy_points;
-		_attack_damage = original._attack_damage;
+		this->_name = original._name;
+		this->_hit_points = original._hit_points;
+		this->_energy_points = original._energy_points;
+		this->_attack_damage = original._attack_damage;
 	}
 	return *this;
 }
@@ -57,7 +57,7 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (_energy_points > 0 && _hit_points > 0)
 	{
-		std::cout <<"ClapTrap "<<"\033[35m" << _name<<"\033[30m"<<" attacks " << target <<", causing "<< _attack_damage<<" points of damage!\033[0m"<<std::endl;
+		std::cout <<"ClapTrap "<<"\033[35m" << _name<<"\033[0m"<<" attacks " << target <<", causing "<< _attack_damage<<" points of damage!"<<std::endl;
 		_energy_points--;
 	}
 	else if (_energy_points <= 0)

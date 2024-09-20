@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 18:47:03 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 23:20:53 by rshatra          ###   ########.fr       */
+/*   Created: 2024/09/20 13:18:45 by rshatra           #+#    #+#             */
+/*   Updated: 2024/09/20 23:22:55 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	this->_name = "UNKNOWN";
 	this->_hit_points = 100;
-	this->_energy_points = 50;
-	this->_attack_damage = 20;
-	std::cout <<"ScavTrap default constructor is here"<<std::endl;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
+	std::cout <<"FragTrap default constructor is here"<<std::endl;
 }
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->_hit_points = 100;
-	this->_energy_points = 50;
-	this->_attack_damage = 20;
-	std::cout<< "\033[35m"<<name <<"(ScavTrap)" << "\033[0m" << ": Yes sir!"<<std::endl;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
+	std::cout<< "\033[35m"<<name <<"(FragTrap)" << "\033[0m" << ": Yes sir!"<<std::endl;
 }
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << "Booom, ScavTrap destructror is home baby!!!" << std::endl;
+	std::cout << "Booom, FragTrap destructror is home baby!!!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& original) : ClapTrap(original)
+FragTrap::FragTrap(const FragTrap& original) : ClapTrap(original)
 {
-	std::cout <<"Copy constructor from ScavTrap is here"<<std::endl;
+	std::cout <<"Copy constructor from FragTrap is here"<<std::endl;
 	*this = original;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& original)
+FragTrap& FragTrap::operator=(const FragTrap& original)
 {
 	if (this != &original)
 	{
-		std::cout <<"Assignment operator from ScavTrap is here"<<std::endl;
+		std::cout <<"Assignment operator from FragTrap is here"<<std::endl;
 		this->_name = original._name;
 		this->_hit_points = original._hit_points;
 		this->_energy_points = original._energy_points;
@@ -51,20 +51,19 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& original)
 	return (*this);
 }
 
-void	ScavTrap::guardGate()
-{
-	std::cout << "\033[35m"<< this->_name<< "\033[0m" << " ScavTrap is now in [Gate keeper] mode" << std::endl;
-}
-
-void ScavTrap::attack(const std::string& target)
+void FragTrap::attack(const std::string& target)
 {
 	if (this->_attack_damage > 0 && this->_hit_points > 0)
 	{
-		std::cout <<"ScavTrap[son of ClapTrap] "<<"\033[35m" << this->_name<<"\033[0m"<<" attacks " << target <<", causing "<< this->_attack_damage<<" points of damage!"<<std::endl;
+		std::cout <<"FragTrap[son of ClapTrap] "<<"\033[35m" << this->_name<<"\033[0m"<<" attacks " << target <<", causing "<< this->_attack_damage<<" points of damage!"<<std::endl;
 		this->_energy_points--;
 	}
 	else if (this->_energy_points <= 0)
 		std::cout <<"\033[35m"<< this->_name << "\033[0m" << "does't have enough energy points to attack!!" <<std::endl;
 	else if (this->_hit_points <= 0)
 		std::cout << "\033[35m"<<this->_name << "\033[0m" << "does't have enough hit points to attack!!" <<std::endl;
+}
+void	FragTrap::highFivesGuys(void)
+{
+	std::cout<< "\033[35m"<<this->_name<<"\033[0m"<<" says: High five mf ,|,,"<<std::endl;
 }

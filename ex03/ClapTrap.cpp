@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 13:26:27 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 18:35:31 by rshatra          ###   ########.fr       */
+/*   Created: 2024/09/20 13:34:50 by rshatra           #+#    #+#             */
+/*   Updated: 2024/09/20 22:45:58 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 void ClapTrap::showPoints(void)
 {
-	std::cout << "Hit points: " << _hit_points<< std::endl;;
-	std::cout << "Energy Points: " << _energy_points << std::endl;;
-	std::cout << "Attack damage: " << _attack_damage << std::endl;;
+	std::cout << "Hit points: " << this->_hit_points<< std::endl;;
+	std::cout << "Energy Points: " << this->_energy_points << std::endl;;
+	std::cout << "Attack damage: " << this->_attack_damage << std::endl;;
 }

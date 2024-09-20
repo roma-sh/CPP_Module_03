@@ -6,16 +6,19 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:36 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 13:28:53 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/20 23:32:39 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
 #include <iostream>
 
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		unsigned int _hit_points;
 		unsigned int _energy_points;
@@ -23,7 +26,6 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
-		ClapTrap(std::string name, unsigned int hit_points, unsigned int energy_points, unsigned int attack_damage);
 		~ClapTrap();
 		ClapTrap(const ClapTrap& original);
 		ClapTrap& operator=(const ClapTrap& original);
@@ -31,5 +33,6 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		void showPoints(void);
-		std::string getName(void);
 };
+
+#endif
