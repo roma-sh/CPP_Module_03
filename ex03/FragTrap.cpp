@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 13:18:45 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 23:22:55 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/22 19:19:04 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ FragTrap::FragTrap() : ClapTrap()
 {
 	this->_name = "UNKNOWN";
 	this->_hit_points = 100;
-	this->_energy_points = 100;
+	// this->_energy_points = 100;
 	this->_attack_damage = 30;
 	std::cout <<"FragTrap default constructor is here"<<std::endl;
 }
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->_hit_points = 100;
-	this->_energy_points = 100;
+	// this->_energy_points = 100;
 	this->_attack_damage = 30;
 	std::cout<< "\033[35m"<<name <<"(FragTrap)" << "\033[0m" << ": Yes sir!"<<std::endl;
 }
@@ -35,7 +35,10 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap(const FragTrap& original) : ClapTrap(original)
 {
 	std::cout <<"Copy constructor from FragTrap is here"<<std::endl;
-	*this = original;
+	this->_name = original._name;
+	this->_hit_points = original._hit_points;
+	this->_energy_points = original._energy_points;
+	this->_attack_damage = original._attack_damage;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& original)

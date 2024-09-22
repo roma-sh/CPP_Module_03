@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:12 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/19 17:58:15 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/22 19:22:00 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int	main(void)
 	x1.beRepaired(2);
 	x2.beRepaired(5);
 	x3.attack("Bone_breaker");
-
+	std::cout<<"===================================" << std::endl;
+	ClapTrap copy(x1);
+	ClapTrap assign;
+	assign = x1;
 	return (0);
 }

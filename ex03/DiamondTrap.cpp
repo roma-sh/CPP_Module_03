@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:49:04 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 23:43:32 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/22 19:38:33 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap::DiamondTrap(const DiamondTrap& original) : ClapTrap(original._name + "_clap_name")
 {
 	std::cout <<"Copy constructor from DiamondTrap is here"<<std::endl;
-	*this = original;
+	this->_name = original._name;
+	this->_hit_points = original._hit_points;
+	this->_energy_points = original._energy_points;
+	this->_attack_damage = original._attack_damage;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& original)
@@ -56,5 +59,5 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& original)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout<<"My name is: " << this->_name << " and my grandfather's name is: " << this->ClapTrap::_name << std::endl;
+	std::cout<<"My name is: "<< "\033[36m" << this->_name << "\033[0m" << " and my grandfather's name is: " << this->ClapTrap::_name << std::endl;
 }

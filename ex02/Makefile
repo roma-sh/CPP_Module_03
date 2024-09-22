@@ -6,11 +6,11 @@
 #    By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/20 13:18:58 by rshatra           #+#    #+#              #
-#    Updated: 2024/09/20 13:19:35 by rshatra          ###   ########.fr        #
+#    Updated: 2024/09/22 19:26:50 by rshatra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = FragTrap
 CFLAGS = -g -Wall -Werror -Wextra
 CC = g++
 

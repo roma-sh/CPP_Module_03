@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:27 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 18:35:31 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/22 19:35:34 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	{
 		if (_hit_points <= amount)
 		{
-			std::cout << "\033[35m"<<_name <<"\033[0m" <<  " was hitted hardly, he received "<< amount <<" of damage,\033[31m RIP\033[0m" <<std::endl;
+			std::cout << "\033[35m"<<_name <<"\033[0m" <<  " was hitted hardly, he received "<< amount <<" of damage,\033[31m RIP 💀\033[0m" <<std::endl;
 			_hit_points = 0;
 		}
 		else

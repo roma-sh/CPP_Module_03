@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:27 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 18:08:11 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/22 19:35:04 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ ClapTrap::ClapTrap(const ClapTrap& original) :
 		_energy_points(original._energy_points),
 		_attack_damage(original._attack_damage)
 {
-	std::cout<<original._name <<" was copied"<<std::endl;
+	std::cout<< "\033[35m" <<original._name<< "\033[0m" <<" was copied"<<std::endl;
 }
 ClapTrap& ClapTrap::operator=(const ClapTrap& original)
 {
 	if (this != &original)
 	{
-		std::cout<< original._name <<" was assigned where ever you want"<<std::endl;
+		std::cout<< "\033[35m" << original._name<< "\033[0m" <<" was assigned where ever you want"<<std::endl;
 		this->_name = original._name;
 		this->_hit_points = original._hit_points;
 		this->_energy_points = original._energy_points;
@@ -73,7 +73,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	{
 		if (_hit_points <= amount)
 		{
-			std::cout << "\033[35m"<<_name <<"\033[0m" <<  " was hitted hardly, he received "<< amount <<" of damage,\033[31m RIP\033[0m" <<std::endl;
+			std::cout << "\033[35m"<<_name <<"\033[0m" <<  " was hitted hardly, he received "<< amount <<" of damage,\033[31m RIP 💀 \033[0m" <<std::endl;
 			_hit_points = 0;
 		}
 		else

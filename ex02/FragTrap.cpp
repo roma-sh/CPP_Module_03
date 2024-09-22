@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 13:18:45 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 18:36:04 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/22 19:33:50 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap(const FragTrap& original) : ClapTrap(original)
 {
 	std::cout <<"Copy constructor from FragTrap is here"<<std::endl;
-	*this = original;
+	this->_name = original._name;
+	this->_hit_points = original._hit_points;
+	this->_energy_points = original._energy_points;
+	this->_attack_damage = original._attack_damage;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& original)
@@ -65,5 +68,17 @@ void FragTrap::attack(const std::string& target)
 }
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout<< "\033[35m"<<this->_name<<"\033[0m"<<" says: High five mf ,|,,"<<std::endl;
+	std::cout<< "\033[35m"<<this->_name<<"\033[0m"<<" says: High five mf  ✋"<<std::endl;
+	// std::cout << "              *        " << std::endl;
+	std::cout << "    *    *    *    *    " << std::endl;
+	std::cout << "    *    *    *    *    *" << std::endl;
+	std::cout << "    *    *    *    *    *" << std::endl;
+	std::cout << "    *    *    *    *    *" << std::endl;
+	std::cout <<  "      *    *    *    *    *" << std::endl;
+	std::cout <<  "        *    *    *    *"<< std::endl;
+	std::cout <<"          *    *    *" << std::endl;
+	std::cout << "         ***********" << std::endl;
+	std::cout << "           *     *" << std::endl;
+	std::cout << "           *     *" << std::endl;
+	std::cout << "           *******" << std::endl;
 }

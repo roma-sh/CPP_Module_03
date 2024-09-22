@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:47:03 by rshatra           #+#    #+#             */
-/*   Updated: 2024/09/20 23:20:53 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/09/22 19:18:04 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(const ScavTrap& original) : ClapTrap(original)
 {
 	std::cout <<"Copy constructor from ScavTrap is here"<<std::endl;
-	*this = original;
+	this->_name = original._name;
+	this->_hit_points = original._hit_points;
+	this->_energy_points = original._energy_points;
+	this->_attack_damage = original._attack_damage;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& original)
